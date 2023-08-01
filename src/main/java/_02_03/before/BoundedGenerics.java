@@ -6,15 +6,15 @@ import java.util.List;
 public class BoundedGenerics {
 
     public static void main(String[] args) {
-        String[] words = {"apple", "banana", "pear"};
+        Double[] doubles = {2.0, 3.5, 14.7};
         Integer[] numbers = {1, 5, 7};
-        List<String> wordsList = convertArrayToList(words);
+        List<Double> wordsList = convertArrayToList(doubles);
         List<Integer> numbersList = convertArrayToList(numbers);
         System.out.println(wordsList);
         System.out.println(numbersList);
     }
 
-    private static <T> List<T> convertArrayToList(T[] array) {
+    private static <T extends Number> List<T> convertArrayToList(T[] array) {
         return Arrays.asList(array);
     }
 
