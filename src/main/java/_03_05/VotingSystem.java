@@ -6,7 +6,7 @@ public class VotingSystem {
 
     // Create a LinkedHashMap here, with the contestant name as the key
     // and the number of votes as the value.
-    LinkedHashMap<String, Integer> contestantVotes = new LinkedHashMap<>();
+    private LinkedHashMap<String, Integer> contestantVotes = new LinkedHashMap<>();
 
     void vote(String contestant) {
         // Implement this method so that a new contestant is added to the map if it's

@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
 
         List<String> fruit = Arrays.asList("apple", "pineapple", "banana", "pear", "strawberry");
-        List<String> capitalisedFruit = processWithoutStreams(fruit);
+        List<String> capitalisedFruit = processWithStreams(fruit);
         System.out.println(capitalisedFruit);
     }
 
@@ -25,6 +26,10 @@ public class Main {
         }
         Collections.sort(capitalisedFruit);
         return capitalisedFruit;
+    }
+
+    static List<String> processWithStreams(List<String> fruit){
+        return fruit.stream().map(String::toUpperCase).filter(item -> item.startsWith("P")).sorted().collect(Collectors.toList());
     }
 
 }
